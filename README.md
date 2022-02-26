@@ -6,7 +6,7 @@ I use an **ISBN**-based naming convention for the folders to reduce clutter and 
 ## Legend
 See the legend below for mapping ISBNs to book titles&mdash;organized alphabetically by book title. In addition, each book "location" should have its own information detailing exercises and general navigation.
 
-| ISBN | Title | Year
-| --- | --- | --- |
-| [978-0321486813](https://github.com/andersonjwan/readings/tree/main/978-0321486813) | Compilers: Principles, Techniques, and Tools | 2006
-| [978-0321776419](https://github.com/andersonjwan/readings/tree/main/978-0321776419) | Programming in C (Developer's Library) | 2014
+| ISBN | Title | Author | Year
+| --- | --- | --- | --- |
+| [978-0321486813](https://github.com/andersonjwan/readings/tree/main/978-0321486813) | Compilers: Principles, Techniques, and Tools | A. Aho et al. |2006
+| [978-0321776419](https://github.com/andersonjwan/readings/tree/main/978-0321776419) | Programming in C (Developer's Library) | S. Kochan | 2014
