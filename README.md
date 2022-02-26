@@ -8,5 +8,6 @@ See the legend below for mapping ISBNs to book titles&mdash;organized alphabetic
 
 | ISBN | Title | Author | Year
 | --- | --- | --- | --- |
-| [978-0321486813](https://github.com/andersonjwan/readings/tree/main/978-0321486813) | Compilers: Principles, Techniques, and Tools | A. Aho et al. |2006
-| [978-0321776419](https://github.com/andersonjwan/readings/tree/main/978-0321776419) | Programming in C (Developer's Library) | S. Kochan | 2014
+| [978-0134997834](https://github.com/andersonjwan/readings/tree/main/978-0134997834) | A Tour of C++, 2e | B. Stroustrup | 2018
+| [978-0321486813](https://github.com/andersonjwan/readings/tree/main/978-0321486813) | Compilers: Principles, Techniques, and Tools, 2e | A. Aho et al. |2006
+| [978-0321776419](https://github.com/andersonjwan/readings/tree/main/978-0321776419) | Programming in C (Developer's Library), 4e | S. Kochan | 2014
