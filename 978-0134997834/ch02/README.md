@@ -1,3 +1,7 @@
+# Chapter 2: User-Defined Types
+
+This chapter highlights high-level user-defined types, their applications, and best practices for said user-defined types. The main user-defined types are structures, classes, unions, and enumerations. Structures and classes are the same with the only difference being in their default behaviors. Unions are useful for types that have one or more possibilities but are unique in existence---tagged unions should be used. And, enumerations are useful for symbolic integer values.
+
 ## Questions
 
 - Section 2.1, p21: What is the list of declarator operators? Is it not just the `=` or `{}` operators?
@@ -11,6 +15,8 @@
 
 - In particular, we often want to keep the representation inaccessible to users so as to ease use, guarantee consistent use of the data, and allow us to later improve the representation. To do that we have to distinguish between the interface to a type (to be used by all) and its implementation (which has access to the otherwise inaccessible data).
 - The only main difference between a struct and a class is that the members are public by default in a struct and private in a class if no access modifiers are given.
+- Always use tagged unions.
+- Always prefer enum class's.
 
 ## Definitions
 
@@ -20,3 +26,8 @@
 ## Resources
 
 - [Classes and structures (C++ only)](https://www.ibm.com/docs/en/zos/2.3.0?topic=only-classes-structures-c)
+- [For-range loop with pointer](http://www.cplusplus.com/forum/beginner/185046/)
+- [std::variant](https://en.cppreference.com/w/cpp/utility/variant)
+- [std::get](https://en.cppreference.com/w/cpp/utility/variant/get)
+- [std::holds_alternative](https://en.cppreference.com/w/cpp/utility/variant/holds_alternative)
+- [Can C++ enum class have methods?](https://stackoverflow.com/questions/21295935/can-a-c-enum-class-have-methods)
