@@ -1,4 +1,4 @@
-# Chapter 2: Modularity
+# Chapter 3: Modularity
 
 ## Questions
 
