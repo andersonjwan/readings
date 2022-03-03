@@ -29,3 +29,7 @@
 - [Working Draft, Standard for Programming Language C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf#page=259)
 - [Overloading class member functions](https://stackoverflow.com/questions/13544364/over-loading-operator-must-take-either-zero-or-one-arguments)
 - [Operators in a namespace](https://stackoverflow.com/questions/171862/namespaces-and-operator-overloading-in-c)
+- [The virtual table](https://www.learncpp.com/cpp-tutorial/the-virtual-table/)
+- [Inheritance](https://isocpp.org/wiki/faq/virtual-functions#dyn-binding)
+- [Upcasting and downcasting](https://www.bogotobogo.com/cplusplus/upcasting_downcasting.php)
+- [Object slicing(https://www.bogotobogo.com/cplusplus/slicing.php)
