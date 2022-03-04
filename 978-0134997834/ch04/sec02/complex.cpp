@@ -131,4 +131,7 @@ main(void) {
   MyNumbers::Complex z5(-2, 2);
 
   cout << "z4 / z5: " << (z4 / z5).ToString() << "\n";
+
+  MyNumbers::Complex z6 = 8;
+  cout << "z6: " << z6.ToString() << "\n";
 }

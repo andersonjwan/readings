@@ -112,4 +112,7 @@ main(void) {
 
   Vector v5 = {1, 2, 3};
   cout << "v5[2]: " << v5[2] << "\n";
+
+  Vector v6 = 8;
+  cout << "v6.size: " << v6.size() << "\n"; // valid, but not intended (see Section 5.1.2)
 }
