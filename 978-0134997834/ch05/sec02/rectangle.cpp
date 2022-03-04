@@ -31,6 +31,10 @@ public:
   Vector(const Vector& v);
   Vector& operator=(const Vector& v);
 
+  // move constructor/assignment
+  Vector(Vector&& v);
+  Vector& operator=(Vector&& v);
+
   ~Vector() { delete[] elems_; }
 
   int size() const {
@@ -50,6 +54,8 @@ private:
 
 Vector::Vector(const Vector& v)
   : size_{v.size()}, elems_{new double[v.size()]} {
+  cout << "copy (constructor) operation...\n";
+
   for(int i = 0; i < v.size(); ++i) {
     elems_[i] = v[i];
   }
@@ -57,6 +63,8 @@ Vector::Vector(const Vector& v)
 
 Vector&
 Vector::operator=(const Vector& v) {
+  cout << "copy (=) operation...\n";
+
   double *p = new double[v.size()];
 
   for(int i = 0; i < v.size(); ++i) {
@@ -65,11 +73,32 @@ Vector::operator=(const Vector& v) {
 
   size_ = v.size();
 
-  delete elems_;
+  delete[] elems_;
   elems_ = p;
 
   return *this;
 }
+
+Vector::Vector(Vector&& v)
+  : size_{v.size_}, elems_{v.elems_} {
+  cout << "move (constructor) operation...\n";
+  v.elems_ = nullptr;
+  v.size_ = 0;
+}
+
+Vector&
+Vector::operator=(Vector&& v) {
+  cout << "move (=) operation...\n";
+
+  elems_ = v.elems_;
+  size_ = v.size_;
+
+  v.elems_ = nullptr;
+  v.size_ = 0;
+
+  return *this;
+}
+
 
 double&
 Vector::operator[](int i) {
@@ -216,5 +245,23 @@ main(void) {
   v3[0] = 53;
   cout << "v3: " << v3.ToString() << "\n";
   cout << "v4: " << v4.ToString() << "\n";
+  cout << "===\n";
+
+  // move operation
+  Vector v5(7);
+  Vector v6(8);
+  Vector v7(10);
+
+  cout << "v5: " << v5.ToString() << "\n";
+  cout << "v6: " << v6.ToString() << "\n";
+  cout << "v7: " << v7.ToString() << "\n";
+  cout << "===\n";
+
+  v5 = v6;
+  v7 = std::move(v5);
+
+  cout << "v5: " << v5.ToString() << "\n";
+  cout << "v6: " << v6.ToString() << "\n";
+  cout << "v7: " << v7.ToString() << "\n";
   cout << "===\n";
 }
