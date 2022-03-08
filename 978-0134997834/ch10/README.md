@@ -14,4 +14,6 @@
 
 ## Resources
 
-- 
+- [std::smatch](https://www.cplusplus.com/reference/regex/smatch/)
+- [ofstream reset precision](https://stackoverflow.com/questions/9197358/ofstream-reset-precision)
+- [Namespace aliases](https://en.cppreference.com/w/cpp/language/namespace_alias)
