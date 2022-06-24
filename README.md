@@ -8,6 +8,7 @@ See the legend below for mapping ISBNs to directories&mdash;organized alphabetic
 
 | ISBN | Title | Author | Year
 | --- | --- | --- | --- |
-| [978-0134997834](https://github.com/andersonjwan/readings/tree/main/978-0134997834) | A Tour of C++, 2e | B. Stroustrup | 2018
-| [978-0321486813](https://github.com/andersonjwan/readings/tree/main/978-0321486813) | Compilers: Principles, Techniques, and Tools, 2e | A. Aho et al. |2006
-| [978-0321776419](https://github.com/andersonjwan/readings/tree/main/978-0321776419) | Programming in C (Developer's Library), 4e | S. Kochan | 2014
+| [978-0134997834](https://github.com/andersonjwan/readings/tree/main/stroustrup2018tour) | A Tour of C++, 2e | B. Stroustrup | 2018
+| [978-0321486813](https://github.com/andersonjwan/readings/tree/main/aho2006compilers) | Compilers: Principles, Techniques, and Tools, 2e | A. Aho et al. |2006
+| [978-0321776419](https://github.com/andersonjwan/readings/tree/main/kochan2014programming) | Programming in C (Developer's Library), 4e | S. Kochan | 2014
+| [978-1718500440](https://github.com/andersonjwan/readings/tree/main/klabnik2018rust) | The Rust Programming Language (Covers Rust 2018) | S. Klabnik and C. Nichols | 2018
