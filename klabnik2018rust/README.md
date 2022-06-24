@@ -1,6 +1,4 @@
 # The Rust Programming Language (Covers Rust 2018)
-*1st Edition*
-
 by Steve Klabnik, Carol Nichols, with contributions from the Rust community
 
 ## Table of Contents
