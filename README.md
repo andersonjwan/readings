@@ -1,7 +1,7 @@
 # Readings
 The purpose of this repository is to store my related textbook reading exercise solutions and any other additional information related to the textbook (e.g., notes, links, resources).
 
-I use a BibTeX-inspired naming convention for the folders to reduce clutter and keep uniformity. The general format is the first author's surname, followed by the year of publication, followed by the first meaning world in the book title (i.e., no articles).
+I use a BibTeX-inspired naming convention for the folders to reduce clutter and keep uniformity. The general format is the first author's surname, followed by the year of publication, followed by the first meaningful word in the book title (i.e., no articles).
 
 ## Books
 See the legend below for mapping ISBNs to directories&mdash;organized alphabetically by title. In addition, each book "location" should have its own information detailing exercises and general navigation.
