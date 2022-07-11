@@ -2,7 +2,6 @@
 
 This chapter covered the concept of structs: data structures used to group similar items together. In addition, the concept of methods and associated functions for structs were defined as well as a general note on automatic dereferencing performed by Rust (i.e., the method syntax and dot syntax is used exclusively by the language and appropriately converted during compilation).
 
-
 ## Notes
 
 - A structure should be used when we want to group together similar items. In addition, if a function takes multiple arguments where the arguments are seemingly related to each other, then it is best to consider a struct to be passed.
