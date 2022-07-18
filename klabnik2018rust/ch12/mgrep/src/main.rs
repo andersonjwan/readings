@@ -4,10 +4,8 @@ use std::process;
 use mgrep::Config;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    let config = Config::new(&args).unwrap_or_else(|e| {
-        eprintln!("Problem parsing arguments: {}", e);
+    let config = Config::new(env::args()).unwrap_or_else(|e| {
+        eprintln!("There was a problem parsing the arguments. See: {}", e);
         process::exit(1);
     });
 
