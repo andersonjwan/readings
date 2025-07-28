@@ -1,0 +1,18 @@
+services:
+  ros:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    runtime: nvidia
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XDG_RUNTIME_DIR=/tmp/runtime-root/
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      - ./:/home/ubuntu/workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["compute", "display", "graphics", "utility", "video"]
+              driver: nvidia

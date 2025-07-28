@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="mobile">
+  <material name="green">
+    <color rgba="0 0.6 0 1"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+
+  <link name="footprint"/>
+  <link name="base">
+    <visual>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <material name="green"/>
+
+      <geometry>
+        <box size="0.6 0.4 0.2"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="rwheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="gray"/>
+      
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lwheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <material name="gray"/>
+      
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="caster">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="gray"/>
+      
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+  <joint name="footprint-base" type="fixed">
+    <parent link="footprint"/>
+    <child link="base"/>
+
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
+  <joint name="base-rwheel" type="continuous">
+    <parent link="base"/>
+    <child link="rwheel"/>
+
+    <origin xyz="-0.15 -0.225 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="base-lwheel" type="continuous">
+    <parent link="base"/>
+    <child link="lwheel"/>
+
+    <origin xyz="-0.15 0.225 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="base-caster" type="fixed">
+    <parent link="base"/>
+    <child link="caster"/>
+
+    <origin xyz="0.2 0 -0.05" rpy="0 0 0"/>
+  </joint>
+</robot>

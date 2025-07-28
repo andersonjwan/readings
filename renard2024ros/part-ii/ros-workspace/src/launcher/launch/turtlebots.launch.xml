@@ -1,0 +1,35 @@
+<launch>
+  <!-- The first instance. -->
+  <node pkg="turtlesim" exec="turtlesim_node" name="robot" namespace="turtlebot/a">
+    <param from="$(find-pkg-share launcher)/config/turtlebots.yaml"/>
+
+    <remap from="turtle1/cmd_vel" to="cmd_vel"/>
+    <remap from="turtle1/pose" to="pose"/>
+    <remap from="turtle1/set_pen" to="set_pen"/>
+  </node>
+
+  <node pkg="controlit" exec="controller" name="controller" namespace="turtlebot/a">
+    <param from="$(find-pkg-share launcher)/config/turtlebots.yaml"/>
+
+    <remap from="/turtle1/cmd_vel" to="cmd_vel"/>
+    <remap from="/turtle1/pose" to="pose"/>
+    <remap from="/turtle1/set_pen" to="set_pen"/>
+  </node>
+
+  <!-- The second instance. -->
+  <node pkg="turtlesim" exec="turtlesim_node" name="robot" namespace="turtlebot/b">
+    <param from="$(find-pkg-share launcher)/config/turtlebots.yaml"/>
+
+    <remap from="turtle1/cmd_vel" to="cmd_vel"/>
+    <remap from="turtle1/pose" to="pose"/>
+    <remap from="turtle1/set_pen" to="set_pen"/>
+  </node>
+
+  <node pkg="controlit" exec="controller" name="controller" namespace="turtlebot/b">
+    <param from="$(find-pkg-share launcher)/config/turtlebots.yaml"/>
+
+    <remap from="/turtle1/cmd_vel" to="cmd_vel"/>
+    <remap from="/turtle1/pose" to="pose"/>
+    <remap from="/turtle1/set_pen" to="set_pen"/>
+  </node>
+</launch>

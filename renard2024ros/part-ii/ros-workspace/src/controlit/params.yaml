@@ -1,0 +1,6 @@
+/controller:
+  ros__parameters:
+    lcolor: [0, 0, 0]
+    rcolor: [255, 255, 255]
+    lvelocity: 1.0
+    rvelocity: 0.5

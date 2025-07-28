@@ -1,0 +1,19 @@
+/abc/counter1:
+  ros__parameters:
+    number: 20
+    period: 0.25
+
+/abc/counter2:
+  ros__parameters:
+    number: 10000
+    period: 5.0
+
+/abc/counter3:
+  ros__parameters:
+    number: -1000
+    period: 0.25
+
+/abc/counter4:
+  ros__parameters:
+    number: 300
+    period: 1.5

@@ -1,0 +1,4 @@
+int64 reset
+---
+bool success
+string message

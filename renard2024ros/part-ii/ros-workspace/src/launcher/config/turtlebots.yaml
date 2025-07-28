@@ -1,0 +1,25 @@
+/turtlebot/a/robot:
+  ros__parameters:
+    background_b: 0
+    background_g: 0
+    background_r: 128
+
+/turtlebot/b/robot:
+  ros__parameters:
+    background_b: 0
+    background_g: 128
+    background_r: 0
+
+/turtlebot/a/controller:
+  ros__parameters:
+    lcolor: [0, 0, 0]
+    rcolor: [255, 255, 255]
+    lvelocity: 1.5
+    rvelocity: 3.0
+
+/turtlebot/b/controller:
+  ros__parameters:
+    lcolor: [0, 0, 0]
+    rcolor: [255, 255, 255]
+    lvelocity: 0.5
+    rvelocity: 1.0

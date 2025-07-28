@@ -1,0 +1,23 @@
+# The number to count to.
+#
+# This field represents the number that the action server should count to before
+# considering the goal to be successfully reached.
+int64 target
+
+# The step size.
+#
+# This represents how fast (in seconds) the action server should count. For
+# example, a `step=0.5` means to count every 500 milliseconds.
+float64 step
+---
+# The number reached.
+#
+# This field represents the number that that the action server was able to reach
+# before termination.
+int64 reached
+---
+# The current number.
+#
+# This field represents the current number that the server is on through its
+# incremental counting.
+int64 current

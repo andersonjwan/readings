@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="pypkg" exec="c"/>
+  <node pkg="cpppkg" exec="d"/>
+</launch>
