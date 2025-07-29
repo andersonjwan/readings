@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="baselength" value="0.6"/>
+    <xacro:property name="basewidth" value="0.4"/>
+    <xacro:property name="baseheight" value="0.2"/>
+    <xacro:property name="wheelradius" value="0.1"/>
+    <xacro:property name="wheellength" value="0.05"/>
+
+    <xacro:macro name="wheel" params="prefix">
+        <link name="${prefix}wheel">
+            <visual>
+                <geometry>
+                    <cylinder radius="${wheelradius}" length="${wheellength}"/>
+                </geometry>
+
+                <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0"/>
+                <material name="gray"/>
+            </visual>
+
+            <collision>
+                <geometry>
+                    <sphere radius="${wheelradius}"/>
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </collision>
+            
+            <xacro:cylinderinert
+                mass="1.0"
+                radius="${wheelradius}"
+                length="${wheellength}"
+                xyz="0 0 0"
+                rpy="${pi / 2.0} 0 0"/>
+        </link>
+    </xacro:macro>
+
+    <link name="footprint"/>
+    <link name="base">
+        <visual>
+            <geometry>
+                <box size="${baselength} ${basewidth} ${baseheight}"/>
+            </geometry>
+
+            <origin xyz="0 0 ${baseheight / 2.0}" rpy="0 0 0"/>
+            <material name="green"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="${baselength} ${basewidth} ${baseheight}"/>
+            </geometry>
+            <origin xyz="0 0 ${baseheight / 2.0}" rpy="0 0 0"/>
+        </collision>
+
+        <xacro:boxinert
+            mass="5.0"
+            width="${baselength}"
+            depth="${basewidth}"
+            height="${baseheight}"
+            xyz="0 0 ${baseheight / 2.0}"
+            rpy="0 0 0"/>
+    </link>
+    <xacro:wheel prefix="l"/>
+    <xacro:wheel prefix="r"/>
+    <link name="caster">
+        <visual>
+            <geometry>
+                <sphere radius="${wheelradius / 2.0}"/>
+            </geometry>
+
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="gray"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <sphere radius="${wheelradius / 2.0}"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </collision>
+        
+        <xacro:sphereinert
+            mass="0.5"
+            radius="${wheelradius / 2.0}"
+            xyz="0 0 0"
+            rpy="0 0 0"
+            />
+    </link>
+
+
+    <joint name="footprintbase" type="fixed">
+        <parent link="footprint"/>
+        <child link="base"/>
+
+        <origin xyz="0 0 ${wheelradius}" rpy="0 0 0"/>
+    </joint>
+    <joint name="baserwheel" type="continuous">
+        <parent link="base"/>
+        <child link="rwheel"/>
+
+        <origin xyz="${-baselength / 4.0} ${-(basewidth + wheellength) / 2.0} 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    <joint name="baselwheel" type="continuous">
+        <parent link="base"/>
+        <child link="lwheel"/>
+
+        <origin xyz="${-baselength / 4.0} ${(basewidth + wheellength) / 2.0} 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    <joint name="basecaster" type="fixed">
+        <parent link="base"/>
+        <child link="caster"/>
+
+        <origin xyz="${baselength / 3.0} 0 ${-wheelradius / 2.0}" rpy="0 0 0"/>
+    </joint>
+</robot>

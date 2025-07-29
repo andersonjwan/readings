@@ -1,0 +1,17 @@
+<launch>
+    <let name="urdf" value="$(find-pkg-share description)/urdf/mobile.robot.xacro"/>
+    <let name="bridge" value="$(find-pkg-share bringup)/config/bridge.yaml"/>
+    <let name="rvizconf" value="$(find-pkg-share description)/rviz/mobile.rviz"/>
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" value="$(command 'xacro $(var urdf)')"/>
+    </node>
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="empty.sdf -r"/>
+    </include>
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description"/>
+    <node pkg="ros_gz_bridge" exec="parameter_bridge">
+        <param name="config_file" value="$(var bridge)"/>
+    </node>
+    <node pkg="rviz2" exec="rviz2" args="--display-config $(var rvizconf)"/>
+</launch>

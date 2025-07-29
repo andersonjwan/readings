@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://www.ros.org/wiki/xacro">
+  <material name="green">
+    <color rgba="0 0.6 0 1"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+
+  <!-- A macro for box-based interials. -->
+
+  <!-- In this case, width, depth, and height can be corresponded to x, y, and z -->
+  <!-- dimensions, respectively. -->
+  <xacro:macro name="boxinert" params="mass width depth height xyz rpy">
+      <inertial>
+          <mass value="${mass}"/>
+          <origin xyz="${xyz}" rpy="${rpy}"/>
+          <inertia ixx="${(mass / 12.0) * (height * height + depth * depth)}"
+                   ixy="0"
+                   ixz="0"
+                   iyy="${(mass / 12.0) * (width * width + height * height)}"
+                   iyz="0"
+                   izz="${(mass / 12.0) * (width * width + depth * depth)}"/>
+      </inertial>
+  </xacro:macro>
+
+  <!-- A macro for cylinder-based inertials. -->
+  <xacro:macro name="cylinderinert" params="mass radius length xyz rpy">
+      <inertial>
+          <mass value="${mass}"/>
+          <origin xyz="${xyz}" rpy="${rpy}"/>
+          <inertia ixx="${(mass / 12.0) * (3 * radius * radius + length * length)}"
+                   ixy="0"
+                   ixz="0"
+                   iyy="${(mass / 12.0) * (3 * radius * radius + length * length)}"
+                   iyz="0"
+                   izz="${(mass / 2.0) * radius * radius}"/>
+      </inertial>
+  </xacro:macro>
+  
+  
+  <!-- A macro for sphere-based inertials. -->
+  <xacro:macro name="sphereinert" params="mass radius xyz rpy">
+      <inertial>
+          <mass value="${mass}"/>
+          <origin xyz="${xyz}" rpy="${rpy}"/>
+          <inertia ixx="${(2.0 / 5.0) * mass * radius * radius}"
+                   ixy="0"
+                   ixz="0"
+                   iyy="${(2.0 / 5.0) * mass * radius * radius}"
+                   iyz="0"
+                   izz="${(2.0 / 5.0) * mass * radius * radius}"/>
+      </inertial>
+  </xacro:macro>
+</robot>

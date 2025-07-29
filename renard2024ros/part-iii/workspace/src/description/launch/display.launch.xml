@@ -1,0 +1,11 @@
+<launch>
+    <let name="urdf" value="$(find-pkg-share description)/urdf/mobile.robot.xacro"/>
+    <let name="rvizconf" value="$(find-pkg-share description)/rviz/mobile.rviz"/>
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" value="$(command 'xacro $(var urdf)')"/>
+    </node>
+
+    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/>
+    <node pkg="rviz2" exec="rviz2" args="--display-config $(var rvizconf)"/>
+</launch>
